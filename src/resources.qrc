@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file alias="main icon">resources/1408403450_103665.ico</file>
+    </qresource>
+</RCC>

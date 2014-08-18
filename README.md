@@ -26,80 +26,17 @@ The following style is used to document keys.
 ;< format(min,max) : Name to show above the option
 ;< optional detailed description to show below the option \
 ;< more descriptio
+;< { list }
 ```
 - `format` specifies integer, float or else.
 - `(min, max)` is an optional range specifier.
 - `:` indicates the start of the short name. This field ends at LF or CR.
 - `\` indicates the description continues on the next line.
 - `[]` contains special options for a format
+- `{}` contains csv list for dropdown
 
 ### Example (concept)
-```
-;< Section description with basic format examples
-[Basic formats]
-
-;< integer(0,5) : Wait for user (seconds)
-;< A value between 0 and 5.
-waitUser=2
-
-;< string(5,32)[A-Za-z0-9] : Your  username
-;< this key requires a 5 to 32 character string with only alphanumerical characters
-username=Jeroen6
-
-;< float(-1,1)[3] : Floating point value
-;< Enter a floating point value between -1 and 1 with 3 decimal places
-value=0.678
-
-;< Section description with date/time format examples
-[Time formats]
-;iso8601, no local formats allowed.
-
-;< date(2000-1-1, 2020-12-31) : First login date
-;< day first logged in
-firstDay=2014-8-16
-
-;< time(06:00, 18:00) : First login time
-;< Time first logged in
-firstTime=12:26:33
-; notice there is no timezone
-
-;< timestamp(2000-1-1, 2020-12-31) : First login timestamp
-;< Time first logged in
-firstTimeStamp=2014-08-16T12:26:32+00:00
-; notice there are no milliseconds, the min or max can also be a full iso8601 timestamp as in firstTimeStamp
-
-;< Section for other formats
-[more formats]
-
-;< dropdown : mode of operation
-;< Choose a mode of operation
-;< (0)off, (1)neutral, (2)passive, (3)active
-mode=0
-
-;< dropdown : mode of operation
-;< Choose a mode of operation
-;< (100)off, (285)neutral, (756)passive, (234)active
-mode=756
-
-;< dropdown : mode of operation
-;< Choose a mode of operation
-;< off, neutral, passive, active
-stringmode=neutral
-
-;< radio : mode of operation
-;< Choose a mode of operation
-;< off, neutral, passive, active
-stringmode=neutral
-
-;< bool : Enable self destruct on case-open
-;< Have the device act as smokemachine when the case is opened.
-allowselfdestuct=0
-; tickbox with tick or no tick
-
-;< bool(2) : Enable self destruct on case-open
-;< Have the device act as smokemachine when the case is opened.
-allowselfdestuct=0
-; tickbox with tick, no tick, and semi-tick (the square state)
+.\doc\syntax.ini
 
 
 
