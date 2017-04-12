@@ -42,15 +42,15 @@ MainWindow::~MainWindow()
  */
 void MainWindow::init(QString filename)
 {
+    ui->tabView->addTab(new QWidget(), QString("name"));
     if(filename == ""){
         openFileDialog();
     }else{
         lastOpenFile = filename;
     }
-
     loadFile();
     parseData();
-    exit(0);
+   // exit(0);
 }
 
 /**

@@ -25,7 +25,7 @@ public:
 
     void init(QString filename);
 
-private:
+protected:
     Ui::MainWindow *ui;
     QFile file;
     QString lastOpenFile;
@@ -38,6 +38,7 @@ private:
     void openFileDialog();
     void loadFile();
     void parseData();
+
 };
 
 #endif // MAINWINDOW_H

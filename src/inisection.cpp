@@ -10,6 +10,7 @@ iniSection::iniSection(QWidget *p, int i) :
     QMainWindow(p), parent(p), index(i)
 {
     keycount = 0;
+
 }
 
 void iniSection::addKey(int i)
@@ -18,6 +19,7 @@ void iniSection::addKey(int i)
     keys.append(k);
     keycount++;
 }
+
 int iniSection::getKeycount() const
 {
     return keycount;

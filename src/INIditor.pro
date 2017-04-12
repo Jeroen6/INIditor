@@ -33,3 +33,6 @@ RESOURCES += \
 
 OTHER_FILES += \
     icon.rc
+
+DISTFILES += \
+    ../test/test.ini
