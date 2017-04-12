@@ -7,11 +7,13 @@
 #include <QMainWindow>
 #include "inikey.h"
 
-class iniSection : public QMainWindow
+class IniSection : public QObject
 {
     Q_OBJECT
 public:
-    explicit iniSection(QWidget *parent = 0, int i=-1);
+    explicit IniSection(int lineNumber, QTextStream &f, QWidget *parent = 0);
+
+    void append(IniKey *k);
 
     void addKey(int i);
     void removeKey(int i = -1);
@@ -25,7 +27,7 @@ public slots:
 private:
     QWidget *parent;
     int index; /// Line number of file this section resides
-    QList<iniKey *> keys;   /// List of keys
+    QList<IniKey *> keys;   /// List of keys
     int keycount;
 
 };

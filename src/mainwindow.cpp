@@ -48,8 +48,11 @@ void MainWindow::init(QString filename)
     }else{
         lastOpenFile = filename;
     }
-    loadFile();
-    parseData();
+
+    ini = new IniFile(filename, this);
+
+    //loadFile();
+    //parseData();
    // exit(0);
 }
 
@@ -105,35 +108,35 @@ void MainWindow::loadFile(){
  *
  */
 void MainWindow::parseData(){
-    QRegularExpression msection("^[\[].*\].*"); // regexp for sections, starting with [ with x chars ending with ] followed by x chars
-    QRegularExpression mcomment("^[;#]");       // regexp for comments, starting with # or ;
-    QRegularExpression msyntax("^;<");          // regexp for instruction, starting with ;<
-    QRegularExpression mkey("^[A-Za-z0-9_]");   // regexp for keys, starting with alphanumerical characters
+//    QRegularExpression msection("^[\[].*\].*"); // regexp for sections, starting with [ with x chars ending with ] followed by x chars
+//    QRegularExpression mcomment("^[;#]");       // regexp for comments, starting with # or ;
+//    QRegularExpression msyntax("^;<");          // regexp for instruction, starting with ;<
+//    QRegularExpression mkey("^[A-Za-z0-9_]");   // regexp for keys, starting with alphanumerical characters
 
-    for(int i=0; i<fileData.count(); i++)
-    {
-        // Check for section
-        QRegularExpressionMatch res = msection.match(fileData.at(i));
-        if(res.hasMatch()){
-            qDebug() << "S: " << fileData.at(i);
-            iniSection *s = new iniSection(this, i);
-            sections.append(s);
-            continue;
-        }
+//    for(int i=0; i<fileData.count(); i++)
+//    {
+//        // Check for section
+//        QRegularExpressionMatch res = msection.match(fileData.at(i));
+//        if(res.hasMatch()){
+//            qDebug() << "S: " << fileData.at(i);
+//            IniSection *s = new IniSection(this, i);
+//            sections.append(s);
+//            continue;
+//        }
 
-        // Check for instructions
-        QRegularExpressionMatch syntax = msyntax.match(fileData.at(i));
-        if( syntax.hasMatch() ){
-            qDebug() << "I: " << fileData.at(i);
-            continue;
-        }
+//        // Check for instructions
+//        QRegularExpressionMatch syntax = msyntax.match(fileData.at(i));
+//        if( syntax.hasMatch() ){
+//            qDebug() << "I: " << fileData.at(i);
+//            continue;
+//        }
 
-        // Check for key
-        QRegularExpressionMatch key = mkey.match(fileData.at(i));
-        if( key.hasMatch() ){
-            qDebug() << "K: " << fileData.at(i);
-            sections.last()->addKey(i);
-            continue;
-        }
-    }
+//        // Check for key
+//        QRegularExpressionMatch key = mkey.match(fileData.at(i));
+//        if( key.hasMatch() ){
+//            qDebug() << "K: " << fileData.at(i);
+//            sections.last()->addKey(i);
+//            continue;
+//        }
+//    }
 }

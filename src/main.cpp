@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     }
 
     w.show();
-    w.init(filename);
+    w.init("../test/test.ini");
 
     return a.exec();
 }

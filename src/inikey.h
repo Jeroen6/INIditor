@@ -5,19 +5,20 @@
 #define INIKEY_H
 
 #include <QMainWindow>
+#include <QTextStream>
 
-class iniKey : public QMainWindow
+class IniKey : public QObject
 {
     Q_OBJECT
 public:
-    explicit iniKey(QWidget *parent = 0, int i=-1);
+    explicit IniKey(int lineNumber, QTextStream &f, QWidget *parent = 0);
 
 signals:
 
 public slots:
 
 private:
-    int index;  /// Line number of file this key resides
+    int ln;  /// Line number of file this key resides
 };
 
 #endif // INIKEY_H

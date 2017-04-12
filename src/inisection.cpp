@@ -6,38 +6,49 @@
 #include "inisection.h"
 #include "inikey.h"
 
-iniSection::iniSection(QWidget *p, int i) :
-    QMainWindow(p), parent(p), index(i)
+/**
+ * @brief IniSection
+ * @param lineNumber    to edit later
+ * @param f             QTextStream to continue parsing
+ * @param parent
+ */
+IniSection::IniSection(int lineNumber, QTextStream &f, QWidget *parent) :
+    QObject(parent)
 {
     keycount = 0;
 
 }
 
-void iniSection::addKey(int i)
+void IniSection::append(IniKey *k)
 {
-    iniKey *k = new iniKey(parent, i);
-    keys.append(k);
-    keycount++;
+
 }
 
-int iniSection::getKeycount() const
+void IniSection::addKey(int i)
+{
+    //IniKey *k = new IniKey(parent, i);
+    //keys.append(k);
+    //keycount++;
+}
+
+int IniSection::getKeycount() const
 {
     return keycount;
 }
 
-void iniSection::removeKey(int i)
+void IniSection::removeKey(int i)
 {
-    if(i < 0){
-        delete keys.last();
-        keys.removeLast();
-        keycount--;
-    }else{
-        if(i < keycount){
-            delete keys.at(i);
-            keys.removeAt(i);
-            keycount--;
-        }else{
-            qDebug() << "iniSection::removeKey-> Cannot remove a non-existing key";
-        }
-    }
+    //if(i < 0){
+    //    delete keys.last();
+    //    keys.removeLast();
+    //    keycount--;
+    //}else{
+    //    if(i < keycount){
+    //        delete keys.at(i);
+    //        keys.removeAt(i);
+    //        keycount--;
+    //    }else{
+    //        qDebug() << "iniSection::removeKey-> Cannot remove a non-existing key";
+    //    }
+    //}
 }

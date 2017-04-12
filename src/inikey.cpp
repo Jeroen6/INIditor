@@ -3,7 +3,7 @@
  */
 #include "inikey.h"
 
-iniKey::iniKey(QWidget *parent, int i) :
-    QMainWindow(parent), index(i)
+IniKey::IniKey(int lineNumber, QTextStream &f, QWidget *parent) :
+    QObject(parent)
 {
 }

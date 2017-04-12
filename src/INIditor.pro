@@ -18,11 +18,13 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     inisection.cpp \
-    inikey.cpp
+    inikey.cpp \
+    inifile.cpp
 
 HEADERS  += mainwindow.h \
     inisection.h \
-    inikey.h
+    inikey.h \
+    inifile.h
 
 FORMS    += mainwindow.ui
 

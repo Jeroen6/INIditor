@@ -9,7 +9,7 @@
 #include <QFile>
 #include <QFileInfo>
 
-#include "inisection.h"
+#include "inifile.h"
 
 namespace Ui {
 class MainWindow;
@@ -33,11 +33,13 @@ protected:
     QFileInfo lastOpenFileInfo;
     QStringList fileData;
 
-    QList<iniSection*> sections;
+    QList<IniSection*> sections;
 
     void openFileDialog();
     void loadFile();
     void parseData();
+
+    IniFile *ini;
 
 };
 
